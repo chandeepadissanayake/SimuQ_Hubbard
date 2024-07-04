@@ -7,7 +7,7 @@ __author__ = "Chandeepa Dissanayake"
 import networkx as nx
 from simuq import QSystem
 from simuq import Qubit
-from simuq.qutip import QuTiPProvider
+import helpers
 import utils
 
 # In our formulation, we assumed that all neighboring lattice sites have the same interaction strength J. We set J =
@@ -42,22 +42,11 @@ for i, j in G.edges():
 for i in range(N):
     H += -h * q[i].X
 
-# SimuQ Stuff
-qs.add_evolution(H, T)
-
-
-qtpp = QuTiPProvider()
-qtpp.compile(qs)
-qtpp.run()
-results = qtpp.results()
-
-# Display the results; First all probabilities and then the probability of ground state It is evident that the state
-# "000000" is the ground state, as flipping any qubit will result in an increment of the energy.
-print(results)
-print("Probability of obtaining the ground state {state}: {prob}".format(
-    state="0" * N,
-    prob=results["0" * N]
-))
+# Simulate the Hamiltonian H over time period T using QuTiP simulator
+results = helpers.simulate_on_qutip(qs, H, T)
+# Print the results in general format. It is evident that the state "000000" is the ground state, as flipping any
+# qubit will result in an increment of the energy.
+helpers.print_simulator_results(results, N)
 
 # Visualize the lattice structure in 3D.
 utils.visualize_lattice(G, 3)
