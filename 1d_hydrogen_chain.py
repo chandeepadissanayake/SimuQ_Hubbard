@@ -2,7 +2,11 @@
 
 The values of z_t and z_u are set arbitrarily. Increase the time period for simulation as required. We rely on the
 classical QuTiP simulator merely for the convenience. Users can choose to utilize other available vendors as
-necessary."""
+necessary.
+
+IMPORTANT: Creator-Annihilator implementation in SimuQ Implementation has an apparent bug in it. Check the PR:
+https://github.com/PicksPeng/SimuQ/pull/37. Incorporate the relevant changes in this PR to your installation of SimuQ
+to fix."""
 
 __author__ = "Chandeepa Dissanayake"
 
