@@ -38,7 +38,7 @@ q = [Qubit(qs) for _ in range(N)]
 H = 0
 for i, j in G.edges():
     H += -J * q[i].Z * q[j].Z
-# Loops over all lattice sites to add the interaction terms.
+# Loops over all lattice sites to add the external field interaction terms.
 for i in range(N):
     H += -h * q[i].X
 
