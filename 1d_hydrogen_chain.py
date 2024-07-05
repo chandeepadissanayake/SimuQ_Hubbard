@@ -1,4 +1,5 @@
-"""Performs the simulation of the 1D Hydrogen Chain (Hubbard Model). We consider a chain with 2 Hydrogen atoms.
+"""Performs the simulation of the 1D Hydrogen Chain (Hubbard Model). We consider a chain with 2 Hydrogen atoms in the
+half-filling configuration (same number of sites as the particles).
 
 This example is written in Pauli gates formulation.
 
