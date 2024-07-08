@@ -1,4 +1,4 @@
-"""Performs the simulation of the Heisenberg XXX model (Jx=Jy=Jz=J) . We rely on the classical QuTiP simulator merely
+"""Performs the simulation of the Heisenberg XXX model (Jx=Jy=Jz=J). We rely on the classical QuTiP simulator merely
 for the convenience. Users can choose to utilize other available vendors as necessary.
 
 Note: We do not include an example for XY model as it is a simplification of the Heisenberg model. Eliminate the
